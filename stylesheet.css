@@ -70,3 +70,6 @@ li {
 .link {
   border: none;
 }
+a{
+  text-decoration: none;
+}

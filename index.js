@@ -11,7 +11,7 @@ let days = [
 let day = days[now.getDay()];
 let time = now.getHours() + ":" + now.getMinutes();
 let date = document.querySelector("#date");
-date.innerHTML = day + " " + time;
+date.innerHTML = "Last updated: " + day + " " + time;
 
 let fahrenheit = document.querySelector("#fahrenheit-link");
 let celsius = document.querySelector("#celsius-link");
@@ -58,10 +58,3 @@ function retrievePosition(position) {
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
   axios.get(url).then(showWeather);
 }
-
-function showCurrentPlace() {
-  navigator.geolocation.getCurrentPosition(retrievePosition);
-}
-
-let current = document.querySelector("#current");
-current.addEventListener("click", showCurrentPlace);

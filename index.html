@@ -18,7 +18,7 @@
       <div class="weather-app">
         <form class="search-form" id="search-form">
           <div class="row">
-            <div class="col-8">
+            <div class="col-9">
               <input
                 type="search"
                 placeholder="Type a city.."
@@ -27,18 +27,13 @@
                 id="city-input"
                 class="form-control shadow-sm" />
             </div>
-            <div class="col-2">
+            <div class="col-3">
               <input
                 type="submit"
                 value="Search"
                 class="form-control btn btn-primary shadow-sm" />
             </div>
-            <div class="col-2" id="current">
-              <input
-                type="submit"
-                value="Current"
-                class="form-control btn btn-success shadow-sm" />
-            </div>
+            
           </div>
         </form>
         <h1 id="city">Sydney NSW, Australia</h1>
@@ -49,16 +44,16 @@
         <div class="row">
           <div class="col-6">
             <div class="clearfix">
-              <!-- <img
+              <img
                 src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
                 alt="Cloudy icon"
-                class="weather-icon float-left" /> -->
+                class="weather-icon float-left" />
               <br />
               <div class="float-left">
                 <span class="temperature" id="temperature">19</span
                 ><span class="units">
-                  <p id="celsius-link">°C</p>
-                  <!-- <a href="#" id="fahrenheit-link">°F</a> -->
+                  <a href="#" id="celsius-link">°C</a>
+                  <a href="#" id="fahrenheit-link">°F</a>
                 </span>
               </div>
             </div>
