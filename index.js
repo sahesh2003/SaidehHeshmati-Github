@@ -16,11 +16,12 @@ date.innerHTML = "Last updated: " + day + " " + time;
 let fahrenheit = document.querySelector("#fahrenheit-link");
 let celsius = document.querySelector("#celsius-link");
 let tempValue = document.querySelector("#temperature");
-let temp = document.querySelector("#temperature").innerText;
 let weatherName = document.querySelector("#weatherName");
 let humidity = document.querySelector("#humidity");
 let wind = document.querySelector("#wind");
 let h1 = document.querySelector("#city");
+let icon = document.querySelector("#weather-icon");
+
 
 
 function showFahrenheit(event){
@@ -60,7 +61,11 @@ function showWeather(response) {
   tempValue.innerHTML = celsiusTemperature;
   humidity.innerHTML = `Humidity: ${response.data.main.humidity}% `;
   wind.innerHTML = ` Wind: ${Math.round(response.data.wind.speed)} km/h `;
-  
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  icon.setAttribute("alt", response.data.weather[0].description);
 }
 
 function retrievePosition(position) {
