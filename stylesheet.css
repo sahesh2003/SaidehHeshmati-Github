@@ -34,9 +34,9 @@ li {
 }
 
 .weather-icon {
-  /* height: 60px;
-  width: 60px; */
-  /* margin-right: 10px; */
+  height: 68px;
+  width: 68px;
+  margin-right: 10px;
 }
 
 .temperature {
@@ -44,7 +44,6 @@ li {
   font-size: 60px;
   font-weight: 400;
   line-height: 1;
-  
 }
 
 .units {
@@ -72,10 +71,10 @@ li {
 .link {
   border: none;
 }
-a{
+a {
   text-decoration: none;
 }
-.units .active{
+.units .active {
   cursor: default;
   color: rgb(33, 33, 33);
 }
