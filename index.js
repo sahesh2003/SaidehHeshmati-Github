@@ -22,37 +22,6 @@ let wind = document.querySelector("#wind");
 let h1 = document.querySelector("#city");
 let icon = document.querySelector("#weather-icon");
 
-
-
-function showFahrenheit(event){
-  event.preventDefault();
-  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
-  tempValue.innerHTML = Math.round(fahrenheitTemp);
-  celsius.classList.remove("active");
-  fahrenheit.classList.add("active");
-}
-function showCelsius(event){
-  event.preventDefault();
-  tempValue.innerHTML = celsiusTemperature;
-  fahrenheit.classList.remove("active");
-  celsius.classList.add("active");
-}
-fahrenheit.addEventListener("click" , showFahrenheit);
-celsius.addEventListener("click", showCelsius)
-
-function showCity(event) {
-  event.preventDefault();
-  let cityInput = document.querySelector("#city-input");
-  let city = document.querySelector("#city");
-  city.innerHTML = `${cityInput.value}`;
-  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&units=metric&appid=${apiKey}`;
-  axios.get(url).then(showWeather);
-}
-
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", showCity);
-
 function showWeather(response) {
   celsiusTemperature = Math.round(response.data.main.temp);
   let weatherDescription = response.data.weather[0].description;
@@ -68,11 +37,39 @@ function showWeather(response) {
   icon.setAttribute("alt", response.data.weather[0].description);
 }
 
-function retrievePosition(position) {
+function showCity(city) {
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
   axios.get(url).then(showWeather);
 }
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#city-input");
+  let city = document.querySelector("#city");
+  city.innerHTML = `${cityInput.value}`;
+  showCity(cityInput.value);
+}
+
+function showFahrenheit(event) {
+  event.preventDefault();
+  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
+  tempValue.innerHTML = Math.round(fahrenheitTemp);
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
+}
+function showCelsius(event) {
+  event.preventDefault();
+  tempValue.innerHTML = celsiusTemperature;
+  fahrenheit.classList.remove("active");
+  celsius.classList.add("active");
+}
+
 let celsiusTemperature = null;
+
+fahrenheit.addEventListener("click", showFahrenheit);
+celsius.addEventListener("click", showCelsius);
+
+showCity("tehran");
