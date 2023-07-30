@@ -91,8 +91,28 @@ a {
   align-items: center;
   text-align: center;
   justify-content: space-around;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 #forecast > .col-2{
   align-items: center;
   justify-content: center;
+}
+#forecast > .col-2 > .day{
+  opacity: 0.6;
+  font-size: 16px;
+}
+#forecast > .col-2 >img{
+  width: 48px;
+}
+.min-max-temp{
+  font-size: 13px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.min{
+  opacity: 0.6;
 }
