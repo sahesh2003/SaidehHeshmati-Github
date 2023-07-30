@@ -87,3 +87,12 @@ a {
   padding-right: 0;
   width: fit-content;
 }
+#forecast{
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+}
+#forecast > .col-2{
+  align-items: center;
+  justify-content: center;
+}

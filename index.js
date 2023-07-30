@@ -21,6 +21,21 @@ let humidity = document.querySelector("#humidity");
 let wind = document.querySelector("#wind");
 let h1 = document.querySelector("#city");
 let icon = document.querySelector("#weather-icon");
+let forecastElement = document.querySelector("#forecast");
+
+let forecastDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+let forecast = "";
+forecastDays.forEach(function (day) {
+  forecast =
+    forecast +
+    `<div class="col-2">
+            <p>${day}</p>
+            <img src="" alt="">
+            <span>18</span>
+            <span>12</span>
+          </div>`;
+});
+forecastElement.innerHTML = forecast;
 
 function showWeather(response) {
   celsiusTemperature = Math.round(response.data.main.temp);
