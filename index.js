@@ -91,23 +91,7 @@ function handleSubmit(event) {
   showCity(cityInput.value);
 }
 
-function showFahrenheit(event) {
-  event.preventDefault();
-  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
-  tempValue.innerHTML = Math.round(fahrenheitTemp);
-  celsius.classList.remove("active");
-  fahrenheit.classList.add("active");
-}
-function showCelsius(event) {
-  event.preventDefault();
-  tempValue.innerHTML = celsiusTemperature;
-  fahrenheit.classList.remove("active");
-  celsius.classList.add("active");
-}
-
 let celsiusTemperature = null;
 
-fahrenheit.addEventListener("click", showFahrenheit);
-celsius.addEventListener("click", showCelsius);
 
 showCity("tehran");

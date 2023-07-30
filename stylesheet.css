@@ -31,6 +31,17 @@ li {
   margin: 20px auto;
   border-radius: 10px;
   max-width: 600px;
+  background-image: linear-gradient(to bottom, #ffb591, #fbbd9b, #f7c5a6, #f4ccb2, #f0d3be, #f3d8ca, #f4ddd6, #f3e3e0, #f6e9eb, #f7f0f4, #faf7fa, #fefefe);
+}
+.input{
+  border: none;
+}
+.btn{
+  background-color: #EC6E4C;
+  border: none;
+}
+.btn:hover{
+  background-color: #7c7c7c;
 }
 
 .weather-icon {
@@ -97,6 +108,11 @@ a {
 #forecast > .col-2{
   align-items: center;
   justify-content: center;
+  border-radius: 10px;
+  padding: 5px;
+}
+#forecast>.col-2:hover{
+  background-color: #7c7c7c1a;
 }
 #forecast > .col-2 > .day{
   opacity: 0.6;
@@ -115,4 +131,13 @@ a {
 }
 .min{
   opacity: 0.6;
+}
+#endNote{
+  background-image: none;
+}
+#endNote>a{
+  color: #EC6E4C;
+}
+#endNote>a:hover{
+  color: #8d8b8b;
 }
