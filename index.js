@@ -93,5 +93,4 @@ function handleSubmit(event) {
 
 let celsiusTemperature = null;
 
-
 showCity("tehran");
